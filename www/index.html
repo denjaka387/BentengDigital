@@ -3,38 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benteng Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Benteng Digital - Pro Edition</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
     <style>
-        body { background-color: #0f172a; color: white; }
-        .feature-card { 
-            background: #1e293b; border-radius: 12px; padding: 1rem; 
-            text-align: center; border: 1px solid #334155; height: 100px;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-        }
-        .icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        :root { --ion-color-primary: #1a2a6c; }
+        .feature-card { height: 100%; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .feature-icon { font-size: 2rem; color: #b21f1f; }
     </style>
 </head>
-<body class="p-5">
-    <header class="mb-6 text-center">
-        <h1 class="text-2xl font-bold text-blue-500 uppercase">🛡️ Benteng Digital</h1>
-        <p class="text-xs text-gray-400">Security Suite - Jo Mobile Dev</p>
-    </header>
-    <div class="grid grid-cols-2 gap-3" id="app-grid">
-        <div class="feature-card"><span>🔍</span>APK Scanner</div>
-        <div class="feature-card"><span>🔗</span>Link Checker</div>
-        <div class="feature-card"><span>🚫</span>Spam Filter</div>
-        <div class="feature-card"><span>🔓</span>Root Detect</div>
-        <div class="feature-card"><span>🌐</span>Net Monitor</div>
-        <div class="feature-card"><span>🖼️</span>Anti Overlay</div>
-        <div class="feature-card"><span>💎</span>App Integrity</div>
-        <div class="feature-card"><span>⌨️</span>Anti Keylog</div>
-        <div class="feature-card"><span>🤖</span>AI Behavior</div>
-        <div class="feature-card"><span>🛡️</span>Exploit Shield</div>
-        <div class="feature-card"><span>🍯</span>Honeypot</div>
-        <div class="feature-card"><span>🔒</span>DNS Protect</div>
-        <div class="feature-card"><span>⏪</span>Ransom Back</div>
-        <div class="feature-card"><span>📡</span>IMSI Detect</div>
-    </div>
+<body>
+    <ion-app>
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title>Benteng Digital v2.0</ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content class="ion-padding">
+            <ion-grid>
+                <ion-row id="feature-container">
+                    </ion-row>
+            </ion-grid>
+        </ion-content>
+    </ion-app>
+
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <script>
+        const features = [
+            { t: 'Offline Mapping', i: 'map', d: 'Visualisasi lahan 50ha tanpa internet.' },
+            { t: 'Driver Ops Tracker', i: 'car', d: 'Pantau orderan & pengeluaran harian.' },
+            { t: 'Drone Flight Log', i: 'airplane', d: 'Logbook baterai & koordinat survey.' },
+            { t: 'Taman Laundry POS', i: 'shirt', d: 'Manajemen kasir & stok laundry.' },
+            { t: 'Network Scanner', i: 'scan', d: 'Cek keamanan jaringan area survey.' },
+            { t: 'Encrypted Vault', i: 'lock-closed', d: 'Simpan data klien dengan enkripsi.' },
+            { t: 'Topography Viewer', i: 'layers', d: 'Render data ketinggian tanah (RTK).' },
+            { t: 'Order Predictor', i: 'trending-up', d: 'Prediksi jam ramai orderan online.' },
+            { t: 'Field Report PDF', i: 'document-text', d: 'Generate laporan survey otomatis.' },
+            { t: 'SOS Emergency', i: 'alert-circle', d: 'Kirim lokasi darurat saat di gunung.' },
+            { t: 'Inventory Manager', i: 'archive', d: 'Stok sparepart (Toyota Rush/Jeep).' },
+            { t: 'Task Scheduler', i: 'calendar', d: 'Jadwal maintenance drone & mobil.' },
+            { t: 'Team Sync', i: 'people', d: 'Koordinasi tim (Roni, Yud, Onje).' },
+            { t: 'Smart Analytics', i: 'bar-chart', d: 'Grafik keuntungan bisnis & operasional.' }
+        ];
+
+        const container = document.getElementById('feature-container');
+        features.forEach(f => {
+            container.innerHTML += `
+                <ion-col size="6" size-md="4">
+                    <ion-card class="feature-card ion-text-center">
+                        <ion-card-content>
+                            <ion-icon name="${f.i}" class="feature-icon"></ion-icon>
+                            <ion-card-title style="font-size: 1rem;">${f.t}</ion-card-title>
+                            <p style="font-size: 0.8rem;">${f.d}</p>
+                        </ion-card-content>
+                    </ion-card>
+                </ion-col>
+            `;
+        });
+    </script>
 </body>
 </html>
