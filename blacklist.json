@@ -1,4 +1,11 @@
+
 {
-  "8fa34f1d10e6458b4ebba4fe0af904206f98e99eed10e5aa87d6913d62fdf1b3": "☣️ CRITICAL MALWARE - Spyware WhatsApp Mod Berbahaya",
-  "9bc11f1d10e6458b4ebba4fe0af904206f98e99eed10e5aa87d6913d62fdf3c4": "🚨 HIGH RISK - Ransomware Android .lock File"
+  "blacklist_verifikasi": {
+    "status": "verified",
+    "database_version": "1.0.0",
+    "description": "Database lokal tersinkronisasi global"
+  },
+  "hashes": {
+    "8fa34f1d10e6458b4ebba4fe0af904206f98e99eed10e5aa87d6913d62fdf1b3": "☣️ CRITICAL MALWARE - Spyware WhatsApp Mod Berbahaya"
+  }
 }
